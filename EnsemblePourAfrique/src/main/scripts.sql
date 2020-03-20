@@ -1,19 +1,8 @@
 
-use ENSEMBLE_POUR_AFRIQUE;
 
-CREATE TABLE `message` (
-  `message_id` int(20) NOT NULL AUTO_INCREMENT,
-  `titre` varchar(100) DEFAULT NULL,
-  `text` varchar(256) DEFAULT NULL,
-  `theme_id` int(20),
-  `compte_id` int(20),
-	`compte_response_id` int(20),
-	`date` date,
-  PRIMARY KEY (`annonce_id`),
-  FOREIGN KEY (compte_id) REFERENCES compte(compte_id),
-  FOREIGN KEY (compte_response_id) REFERENCES compte(compte_id),
-  FOREIGN KEY (theme_id) REFERENCES theme(theme_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `message`;
+DROP TABLE IF EXISTS `compte`;
+DROP TABLE IF EXISTS `theme`;
 
 
 CREATE TABLE `compte` (
@@ -32,6 +21,21 @@ CREATE TABLE `theme` (
   `nom_theme` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`theme_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `message` (
+  `message_id` int(20) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(100) ,
+  `text` varchar(256) ,
+  `theme_id` int(20),
+  `compte_id` int(20),
+	`compte_response_id` int(20),
+	`date` date,
+  PRIMARY KEY (`message_id`),
+  FOREIGN KEY (compte_id) REFERENCES compte(compte_id),
+  FOREIGN KEY (compte_response_id) REFERENCES compte(compte_id),
+  FOREIGN KEY (theme_id) REFERENCES theme(theme_id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 INSERT INTO `theme` (`theme_id`, `nom_theme`) VALUES
 (1, 'EMPLOI'),
