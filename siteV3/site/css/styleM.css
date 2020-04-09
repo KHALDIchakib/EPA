@@ -1,0 +1,28 @@
+.monform{
+	background-color: rgba(245,245,245,0.5);
+}
+.bouton{
+	background-color: #7edfdf;
+	color: #333;
+}
+.navbar{
+	background-color: #333;
+}
+.navbar-inverse .navbar-brand img {
+  width: 160px;
+  margin: -50px;
+}
+#idlist{
+	margin: 20px;
+	margin-left: 50px;
+	font-size: 15px;
+}
+li{
+	color: #7edfdf;
+}
+.images img{
+  width: 115%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+}

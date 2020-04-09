@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Ensemble pour l'Afrique</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+
+<div class="super_container">
+		
+	<!-- Header -->
+	<header class="header">
+
+				<!--Navbar-->
+		<nav class="navbar">
+
+		  <!-- Navbar brand -->
+		  <a class="navbar-brand monlogo" href="index.html"><img src="images/logo.jpg" alt="logo" /></a>
+
+		  <!-- Collapse button -->
+		  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+			aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+				class="fa fa-bars fa-2x"></i></span></button>
+
+		  <!-- Collapsible content -->
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+			<!-- Links -->
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" style="color: black;" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" style="color: black;"href="about.html">Qui somme nous?</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" style="color: black;"href="projets.html">Nos projets</a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link" style="color: black;" href="contact.html">Contactez Nous</a>
+			  </li>
+			  <li>
+			  	<div class="header_right d-flex flex-row align-items-center justify-content-start">
+					<div class="header_link"><a href="adhesion.html">Adhésion</a></div>
+					<div>__</div>
+					<div class="header_link" style="background-color:#229954 "><a href="login.html">Connexion</a></div>
+					<div>__</div>
+					<div class="header_link" style="background-color:red "><a href="forum.html">Forum</a></div>
+				</div>
+			</li>
+			</ul>
+			<!-- Links -->
+		  </div>
+		</nav>		
+	</header>
+	<div class="espace"></div>
+	<div class="bienvenue text-center">Forum</div> <br>
+
+	<div class="container">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6">
+					<div class="section_title text-center">
+						<div>EPA</div>
+						<br>
+							<h5>Présentation</h5><br>
+							<h1>Que représente EPA?</h1>
+					</div> 
+				</div>
+				<div class="col-xl-6 col-lg-6">
+					<div class="section_title text-center">
+						<div>Liens</div>
+						<br>
+							<h5>Quelques liens utiles</h5><br>
+							<h1>Consultez:</h1>
+					</div> 
+				</div>
+			</div>
+			<div class="row intro_row">
+				<div class="col-xl-6 col-lg-6">
+					<div class="intro_text text-center">
+						<p>Agir ensemble pour l'Afrique est notre ambition.
+
+						Elle est née d’une prise de conscience collective (étudiants de la Cité Internationale Universitaire et habitués de la chapelle des Franciscains sise dans le 14ème arrondissement de Paris) devant la gravité des violences survenues au Rwanda en 1994, puis en Côte d'ivoire en 1999.
+
+						Pour conjurer le sentiment d'impuissance et de culpabilité ressenti en pareille circonstance, le meilleur moyen était de nous engager dans le projet de développement durable de l'Afrique.</p>
+						<button class="btn btn-primary" href="about.html"> en savoir plus</button>
+						<br><br>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6">
+					<ul>
+						<li><a href="http://agencedys.com/wp-pass/">Programme d’Appui Au développement des Strategies mutualiste de Santé Informations et Contacts</a></li>
+						<li><a href=" http://www.uam-afro.org/index.html">UAM : Union de la Mutualité Africaine Université et Économie Sociale et Solidaire - 2015 </a></li>
+						<li><a href=" www.ove-national.education.fr">OVE : observatoire national de la vie Etudiante –</a></li>
+						<li><a href="http://www.fondationgoree.org/memorial">Message de Gorée Purification de la Mémoire Pour une Humanité nouvelle (07/10/2003) (XIIIème SCEAM)</a></li>
+						<li><a href="http://www.rfi.fr/emission/20150108-togo-conducteurs-taxi-moto-mutuelle-transport-emploi-travail-cooperation-developpement">Une mutuelle innovante au Togo pour les motos taxis</a></li>
+					</ul>
+			</div>
+			<div class="header_link text-center"></div>
+		</div>
+		<div class="row">
+                <div class="col-md-8">
+					<div class="form-group col-md-6">
+				      <select id="inputState" class="form-control">
+				        <option selected>Theme...</option>
+				        <option>...</option>
+				        <option>...</option>
+				        <option>...</option>
+				        <option>...</option>
+				      </select>
+				  	</div>
+				 </div>
+			 	<div class="form-group col-md-4">
+						    <input class="mr-sm-5" type="text" placeholder="Search">
+						    <button class="btn btn-success" type="submit">Search</button>
+		 			 </div>	
+	    		</div>
+	    	</div>
+
+		  <main class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header text-center">Discussion</div>
+                        <div class="card-body">
+                          <!--   <?php
+                            if(isset($_GET['action']) && $_GET['action'] == 'success')
+                            {
+                                echo '<div class="alert alert-success" role="alert">
+                                    Utilisateur supprimé avec succes.
+                                  </div>';
+                            }
+                            ?> -->
+                            <table class="table table-responsive table-hover">
+                                <thead>
+                                    <th>User</th>
+                                    <th>Message</th>
+                                    <th>Date</th>
+                                    <th></th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                	<tr>
+                                		<td>User</td>
+                                		<td>
+                                		<!-- afficher text -->
+
+                                		<textarea class="form-control" id="text" name="text" rows="5" cols="50">
+										 TEXT
+										</textarea>
+                                		<td>jj-mm-aa</td>
+									  <td><form action="/action_page.php">
+									    <div class="form-group">
+									      <input type="file" class="form-control-file border" name="file">
+									    </div>
+									  </form>
+									</td>
+									<td>
+                                			<button class="btn btn-sm btn-success" form="suppressionC" onclick="return confirm('Voulez vous vraiment supprimer cet utilisateur ?');">
+                                                    <i class="fa fa-comment"></i> commenter
+                                                </button>
+                                                <form method="post" action="" hidden id="suppressionC">
+                                                    <input name="idACommenter" value="<?php echo $utilisateur['id_user'] ?>">
+                                                </form>
+                                		</td>  
+</div>
+
+                                	</tr>
+                                 <!--    <?php foreach ($utilisateurs as $utilisateur){ ?>
+                                        <tr>
+                                            <td><?php echo $utilisateur['id_user'] ?></td>
+                                            <td><?php echo $utilisateur['nom'] ?></td>
+                                            <td><?php echo $utilisateur['email'] ?></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-danger" form="suppressionC" onclick="return confirm('Voulez vous vraiment supprimer cet utilisateur ?');">
+                                                    <i class="fa fa-trash"></i> supprimer
+                                                </button>
+                                                <form method="post" action="" hidden id="suppressionC">
+                                                    <input name="idASupprimer" value="<?php echo $utilisateur['id_user'] ?>">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php }; ?> -->
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	</div>
+	<!-- forum -->
+ 	
+
+
+		<!-- Footer -->
+				<hr>
+				<div class="bienvenue text-center">Coordonnées</div> <br>
+				<hr>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row offering_row">
+				
+				<!-- coord -->
+				<div class="col-xl-4 col-md-6">
+					
+						<div class="card shadow" style="width: 20rem,height: 30em">
+								<div class="inner im">
+							 		<img class="card-img-top" src="images/ad.png" alt="">
+							 	</div>
+							  <div class="card-body">
+							  	<p>Le siège social est fixé  au 10, Avenue Paul Appel 75014 Paris – France</p>
+							  </div>
+							</div>
+						
+				</div>
+
+				<!-- coord -->
+				<div class="col-xl-4 col-md-6">
+					<div class="card shadow" style="width: 20rem,height: 40em;">
+							  <div class="inner im">
+							 		<img class="card-img-top" src="images/siret.jpg" alt="">
+							 	</div>
+							  <div class="card-body">
+								<p class="card-text">Identification INSEE : N° de SIRET 484 104237 00017, Code APE  913E</p>
+							  </div>
+							</div>
+						
+				</div>
+				<div class="col-xl-4 col-md-6">
+					<div class="card shadow" style="width: 20rem,height: 40em;">
+							  <div class="inner im">
+							 		<img class="card-img-top" src="images/mail.png" alt="">
+							 	</div>
+							  <div class="card-body">
+								<p class="card-text"> vous pouvez également nous contacter par mail au :contact@epa.com</p>
+							  </div>
+							</div>
+						
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+			<div class="footer_content">
+				<p>&copy; Copyrights <strong>odile hamrioui - WEB Factory 2K20</strong>. All Rights Reserved</p> 
+			</div> 
+		</div>		
+
+	</footer>
+
+</div>
+
+<script src="js/menu.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="plugins/jquery-ui.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

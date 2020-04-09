@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ensemble Pour l'Afrique</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- logo -->
+  <link href="img/epa.png" rel="icon">
+  <!-- Libraries JavaScript  -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/php-mail-form/validate.js"></script>
+  <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <!-- Bootstrap CSS  -->
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <!-- Libraries CSS -->
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/php-mail-form/validate.js">
+  <!-- le css qu'on a rajouté pour ajouter du style Stylesheet File -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- menu Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="./img/epa.jpg"></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="active"><a href="home.html"><span>Accueil</span></a></li>
+          <li  class="men"><a href="culture.html "><span>EPA</span></a></li>
+          <li  class="men"><a href="projet.html"><span>Nos Projets</span></a></li>
+           <li class="men"><a  data-toggle="modal" data-target="#myModal" href="#myModal"><span>Contacter</span></a></li>
+         </ul>
+        <ul class="nav navbar-nav navbar-right">
+        	<form class="navbar-form pull-right">
+          	<input type="text" class="form-control">
+          	<button class="btn btn-warning btn-sm" type="submit">Rechercher</button>
+          </form>
+         <li class="men"><a href="login.php"><span>Connexion</span></a></li>
+          <li  class="men"><a href="register.php"><span>Adhésion</span></a></li>
+         </ul>
+      </div>
+    </div>
+  </div>
+<!-- container de ma banner-->
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h3>Ensemble Pour l'Afrique</h3>
+        </div> 
+      </div>
+    </div>
+  </div>
+<!-- carousel-->
+<h2 id="titredecouv"> Agir ensemble pour l'Afrique est notre ambition.</h2>
+  <div class="col-xs-12 col-sm-6 col-lg-6 car" >
+
+    <div id="capitalcarousel" class="carousel slide" id="slider" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li class="active" data-slide-to="0" data-target="#capitalcarousel"></li>
+        <li data-slide-to="1" data-target="#capitalcarousel"></li>
+        <li data-slide-to="2" data-target="#capitalcarousel"></li>
+        <li data-slide-to="3" data-target="#capitalcarousel"></li>
+      </ol>
+
+        <div class="carousel-inner shadow">
+          <div class="item active">
+            <img src="./img/im1.jpg" alt="1erimage" />
+            <div class="carousel-caption">
+              <h3>1</h3>
+              <p>
+                Découvrez nos <a href="projet.html"> projets</a>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./img/im1.jpg" alt="2Eimage" />
+              <div class="carousel-caption">
+                <h3>2</h3>
+                <p>
+                  Rejoignez nous !
+                </p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./img/im1.jpg" alt="3Eimage" />
+            <div class="carousel-caption">
+              <h3>3</h3>
+              <p>
+                 Notre but
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./img/im1.jpg" alt="4Eimage" />
+              <div class="carousel-caption">
+                <h3>4</h3>
+                <p>
+                    .......
+                </p>
+              </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#capitalcarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#capitalcarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div><!--fin de ma carousel-->
+<!-- le contenue de mon explication que j'ai séparé en 3 partie 12colonnes/3=4 -->
+  <div class="container w">
+    <div class="row centered">
+      <br><br>
+      <div class="col-lg-4">
+        <i class="fa fa-heart"></i>
+        <h4> Les principes de l’association</h4>
+        <p>Nous avons la volonté de partager des connaissances, des technologies, des compétences et des expériences dans les projets de solidarité entre le Nord et le Sud, en particulier dans le cadre de l’accueil immédiat et chaleureux des étudiants africains en région parisienne. </p>
+        <br>
+        <p>Nous mettons régulièrement en commun nos réflexions en vue de promouvoir l’accès aux soins de qualité  pour tous en Afrique, via un système de mutualisation. Le groupe de travail dédié à la préparation des dix ans d’EPA a réfléchi sur le sujet et a découvert des initiatives publiques et privées intéressantes en cours en Afrique de l’Ouest. Ceci peut constituer un champ d’observation et d’échanges intéressant pour le conseil d’administration (CA).</p>
+      </div>
+      <!-- col-lg-4 -->
+      <br>
+    </div>
+    <hr>
+   </div>
+  <!-- autre-->
+<h2 id="titredecouv"> Agir ensemble pour l'Afrique est notre ambition.</h2>
+  <div class="container w">
+    <div class="row centered">
+      <br><br>
+      <div class="col-lg-4">
+        <i class="fa fa-heart"></i>
+        <h4> Les principes de l’association</h4>
+        <p>Nous avons la volonté de partager des connaissances, des technologies, des compétences et des expériences dans les projets de solidarité entre le Nord et le Sud, en particulier dans le cadre de l’accueil immédiat et chaleureux des étudiants africains en région parisienne. </p>
+        <br>
+        <p>Nous mettons régulièrement en commun nos réflexions en vue de promouvoir l’accès aux soins de qualité  pour tous en Afrique, via un système de mutualisation. Le groupe de travail dédié à la préparation des dix ans d’EPA a réfléchi sur le sujet et a découvert des initiatives publiques et privées intéressantes en cours en Afrique de l’Ouest. Ceci peut constituer un champ d’observation et d’échanges intéressant pour le conseil d’administration (CA).</p>
+      </div>
+      <!-- col-lg-4 -->
+      <div class="col-lg-4">
+        <i class="fa fa-heart"></i>
+        <h4> Les principes de l’association</h4>
+        <p>Nous avons la volonté de partager des connaissances, des technologies, des compétences et des expériences dans les projets de solidarité entre le Nord et le Sud, en particulier dans le cadre de l’accueil immédiat et chaleureux des étudiants africains en région parisienne. </p>
+        <br>
+        <p>Nous mettons régulièrement en commun nos réflexions en vue de promouvoir l’accès aux soins de qualité  pour tous en Afrique, via un système de mutualisation. Le groupe de travail dédié à la préparation des dix ans d’EPA a réfléchi sur le sujet et a découvert des initiatives publiques et privées intéressantes en cours en Afrique de l’Ouest. Ceci peut constituer un champ d’observation et d’échanges intéressant pour le conseil d’administration (CA).</p>
+      </div>
+      <!-- col-lg-4 -->
+      <div class="col-lg-4">
+        <i class="fa fa-heart"></i>
+        <h4> Les principes de l’association</h4>
+        <p>Nous avons la volonté de partager des connaissances, des technologies, des compétences et des expériences dans les projets de solidarité entre le Nord et le Sud, en particulier dans le cadre de l’accueil immédiat et chaleureux des étudiants africains en région parisienne. </p>
+        <br>
+        <p>Nous mettons régulièrement en commun nos réflexions en vue de promouvoir l’accès aux soins de qualité  pour tous en Afrique, via un système de mutualisation. Le groupe de travail dédié à la préparation des dix ans d’EPA a réfléchi sur le sujet et a découvert des initiatives publiques et privées intéressantes en cours en Afrique de l’Ouest. Ceci peut constituer un champ d’observation et d’échanges intéressant pour le conseil d’administration (CA).</p>
+      </div>
+      <br>
+    </div>
+    	</div>
+
+    <hr>		
+    <h2 id="titredecouv"> Chaque jour nos projets s'agrandissent</h2>
+		<div id="maDiv" style=" margin: 20px;width: 1000px; height: 600px"></div>
+		<script>
+			// bornes pour empecher la carte StamenWatercolor de "dériver" trop loin...
+			var northWest = L.latLng(90, -180);
+			var southEast = L.latLng(-90, 180);
+			var bornes = L.latLngBounds(northWest, southEast);
+			// Initialisation de la couche StamenWatercolor
+			var coucheStamenWatercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				subdomains: 'abcd',
+				ext: 'jpg'
+			});
+			// Initialisation de la carte et association avec la div
+			var map = new L.Map('maDiv', {
+				center: [5.3096600,  -4.0126600],
+				minZoom: 2,
+				maxZoom: 18,
+				zoom: 2,
+				maxBounds: bornes
+			});
+			//var map = L.map('maDiv').setView([48.858376, 2.294442],5);
+			// Affichage de la carte
+			map.addLayer(coucheStamenWatercolor);
+			// Juste pour changer la forme du curseur par défaut de la souris
+			document.getElementById('maDiv').style.cursor = 'crosshair'
+			//map.fitBounds(bornes);
+			// Initilisation d'un popup
+			var popup = L.popup();
+			// Fonction de conversion au format GeoJSON
+			function coordGeoJSON(latlng,precision) { 
+				return '[' +
+					L.Util.formatNum(latlng.lng, precision) + ',' +
+					L.Util.formatNum(latlng.lat, precision) + ']';
+			}
+			// Fonction qui réagit au clic sur la carte (e contiendra les données liées au clic)
+			function onMapClick(e) {
+				popup.setLatLng(e.latlng)
+					.setContent("Hello click détecté sur la carte !<br/> " + e.latlng.toString()+ "<br/>en GeoJSON: " + coordGeoJSON(e.latlng,7) + "<br/>Niveau de  Zoom: " + map.getZoom().toString())
+					.openOn(map);
+			}
+			//on ajoute des marqueurs sur les pays où se trouve le projet en question
+			// Association Evenement/Fonction handler
+			map.on('click', onMapClick);
+			L.marker([5.3096600,  -4.0126600],[36.7525000,  3.0419700]).addTo(map);
+			// Nous initialisons une liste de marqueurs
+		var villes = {
+			"Paris": { "lat": 48.852969, "lon": 2.349903 },
+			"Brest": { "lat": 48.383, "lon": -4.500 },
+			"Quimper": { "lat": 48.000, "lon": -4.100 },
+			"Bayonne": { "lat": 43.500, "lon": -1.467 }};
+		for (ville in villes) {
+		var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(map);
+	}    
+		</script>
+
+  <!-- FIIIIIIIIIIIIIN -->
+  <!--on mets les images dans des div differentes pour controler la hauteur et largeur de chacune et ce avec le css-->
+  <h2 id="titredecouv">Ils nous ont fait confiance</h2>
+
+  <div id="dg">
+    <div class="container">
+      <div class="row centered">
+        <br>
+        <div class="col-lg-4">
+          <div class="tilt">
+            <a href="#"><img src="img/im3.jpeg"alt=""/></a>
+            <h4>Entreprise1</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="tilt">
+            <a href="#"><img src="img/im3.jpeg"alt=""/></a>
+            <h4>Entreprise1</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="tilt">
+            <a href="#"><img src="img/im3.jpeg"alt=""/></a>
+            <h4>Entreprise1</h4>
+
+          </div>
+        </div>
+      </div>
+      <!-- row -->
+     <div class="row centered">
+        <br>
+        <div class="col-lg-4">
+          <div class="tilt">
+            <a href="#"><img src="img/im3.jpeg"alt=""/></a>
+            <h4>Entreprise1</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="tilt">
+            <a href="#"><img src="img/im3.jpeg"alt=""/></a>
+            <h4>Entreprise1</h4>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="tilt">
+            <a href="#"><img src="img/im3.jpeg"alt=""/></a>
+            <h4>Entreprise1</h4>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+  </div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content centered">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Contactez-nous</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row centered">
+            <p>
+            <br/>Pour nous contacter directement voici mon mail:<br/> 
+           ....................................
+            </p>
+          </br><p>@dresse</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="copyrights" >
+       <p>&copy; Copyrights <strong>odile hamrioui</strong>. All Rights Reserved
+        </p>  
+  </div>
+</body>
+</html>

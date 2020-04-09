@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Ensemble pour l'Afrique</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+
+<div class="super_container">
+
+
+	    <header class="header1" style="background-color: white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <a class="navbar-brand" href="#">
+            <div class="logo"><a href="#"><img class="logo_1" src="images/logo.jpg" alt="" width="150" height="150" style="margin-right: 100px"></a></div>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+       			<li class="nav-item">
+			  	<div class="header_link" style="background-color:#229954; margin-right: 5px"><a href="index.html"> Accueil</a></div>
+			 	</li>
+			 	<li class="nav-item">
+			  	<div class="header_link" style="background-color:#229954; margin-right: 5px"><a href="about.html">EPA ?</a></div>
+			 	</li>
+			 	<li class="nav-item">
+			  	<div class="header_link" style="background-color:#229954; margin-right: 5px"><a href="projets.html">Projets</a></div>
+			 	</li>
+			 	<li class="nav-item">
+			  	<div class="header_link" style="background-color:#229954; margin-right: 5px"><a href="contact.html"> Contact</a></div>
+			 	</li>
+              	<li class="nav-item">
+			  	<div class="header_link" style="background-color:#229954; margin-right: 5px"><a href="login.php"> Adhérent</a></div>
+			 	</li>
+              	<li class="nav-item">
+					<div class="header_link" style="background-color:#DF3A01; margin-right: 5px "><a href="login_admin.php">Membre</a></div>
+				</li>
+              	<li class="nav-item">
+					<div class="header_link"><a href="adhesion.php" style="margin-right: 5px">Adhésion</a></div>
+				</li>
+				<li class="nav-item">
+					<div class="header_link" style="background-color:red; margin-left:5px "><a href="forum.php">Forum</a></div>
+				</li>
+            </ul>
+        </div>
+    </div>
+	</nav>
+</header>
+	<!-- Intro -->
+
+	<div class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<div style= "padding-top : 100px;">EPA</div>
+						<br>
+							<h5>Nos projets</h5><br>
+							<h1>Notre investissement</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div align="center">
+	<div id="maDiv" style=" margin: 20px;width: 1000px; height: 600px"></div></div>
+		<script>
+			// bornes pour empecher la carte StamenWatercolor de "dériver" trop loin...
+			var northWest = L.latLng(90, -180);
+			var southEast = L.latLng(-90, 180);
+			var bornes = L.latLngBounds(northWest, southEast);
+			// Initialisation de la couche StamenWatercolor
+			var coucheStamenWatercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				subdomains: 'abcd',
+				ext: 'jpg'
+			});
+			// Initialisation de la carte et association avec la div
+			var map = new L.Map('maDiv', {
+				center: [5.3096600,  -4.0126600],
+				minZoom: 2,
+				maxZoom: 18,
+				zoom: 2,
+				maxBounds: bornes
+			});
+			// var map = L.map('maDiv').setView([48.858376, 2.294442],5);
+			// Affichage de la carte
+			map.addLayer(coucheStamenWatercolor);
+			// Juste pour changer la forme du curseur par défaut de la souris
+			document.getElementById('maDiv').style.cursor = 'crosshair'
+			map.fitBounds(bornes);
+			// Initilisation d'un popup
+			var popup = L.popup();
+			// Fonction de conversion au format GeoJSON
+			function coordGeoJSON(latlng,precision) {
+				return '[' +
+					L.Util.formatNum(latlng.lng, precision) + ',' +
+					L.Util.formatNum(latlng.lat, precision) + ']';
+			}
+			// Fonction qui réagit au clic sur la carte (e contiendra les données liées au clic)
+	 	function onMapClick(e) {
+
+				popup.setLatLng(e.latlng)
+					.setContent(ville['content'])
+					.openOn(map);
+					map.setZoom(5);
+
+			}
+			//on ajoute des marqueurs sur les pays où se trouve le projet en question
+			// Association Evenement/Fonction handler
+			map.on('click', onMapClick);
+
+			// Nous initialisons une liste de marqueurs
+			var villes = {
+				"Paris": { "lat": 48.852969, "lon": 2.349903, "content": " Projet de mise en place d'une structure d'accueil pour les étudiants et stagiaires de passage à Paris et sa Région en partenariat avec la Maison des Associations de Paris 14"},
+				"Togo": { "lat": 5.3096600, "lon": -4.0126600, "content": " <b> Projet : </b> L'eau de la vie, l'eau de tous les espoirs - Convention de Partenariat EPA Ensemble Pour l'Afrique /  groupe Total (18/12/2006) <br> <b> Projet : </b> Concert de Jazz et de musique classique 16/06/2007 <br> <b> Actions humanitaire, projet de développement rural à Yokélé, Fada-Copé </b> " }};
+
+
+			for (ville in villes) {
+			var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(map).bindTooltip(ville, {permanent: true, direction: 'top'});
+			marker.bindPopup(villes[ville].content);;
+	}
+		</script>
+
+	<br>
+	<!-- offres gratuits -->
+	<div class="section_title text-center">
+		<div>EPA</div>
+			<br>
+		<h5>Offres</h5><br>
+		<h1>Prestations</h1>
+	</div>
+	<br><hr>
+	<div class="container">
+			<div class="row offering_row">
+
+				<!-- coord -->
+				<div class="col-xl-6 col-md-6">
+
+					<div class="card shadow" style="width: 15rem,height: 30em">
+						<div class="text-center">
+							<p>Offert</p>
+						</div>
+						<div class="inner">
+							<img class="card-img-top" src="images/im9.jpg" alt="">
+						</div>
+						<div class="card-body">
+							<p>CONTE Pour Toute La Famille (prestation offerte)</p><p>Si tu me crois c'est que j'ai menti  27/11/2011. Spectacle donné par Mme Françoise BARRET, au bénéfice de l'association "Ensemble pour l'Afrique"</p>
+							<p>Libre participation</p>
+							</div>
+						</div>
+				</div>
+				<div class="col-xl-6 col-md-6">
+
+					<div class="card shadow" style="width: 15rem,height: 30em">
+						<div class="text-center">
+							<p>Offert</p>
+						</div>
+						<div class="inner">
+							<img class="card-img-top" src="images/im8.jpg" alt="">
+						</div>
+						<br>
+						<div class="card-body">
+							<p>Sur les ailes du vent  24/11/2013 (prestation offerte)</p><p>Par Mme Françoise Barret. Histoire pour tous les âges  à écouter sans modération à partir de 7 ans</p>
+							<p>Libre participation</p>
+							</div>
+						</div>
+				</div>
+
+				</div>
+	<!-- Footer -->
+				<hr>
+	<div class="bienvenue text-center">Coordonnées</div> <br>
+				<hr>
+	<footer class="footer">
+		<div class="container">
+			<div class="row offering_row">
+
+				<!-- coord -->
+				<div class="col-xl-4 col-md-6">
+
+						<div class="card shadow" style="width: 20rem,height: 30em">
+								<div class="inner im">
+									<img class="card-img-top" src="images/check.png" alt=""  style="margin-left: auto margin-right: auto" >
+								</div>
+								<div class="card-body">
+									<p>Le siège social est fixé au <a href="http://maps.google.com/?q=10 Avenue Paul Appell 75014 Paris">10, Avenue Paul Appel 75014 Paris – France</a></p>
+								</div>
+							</div>
+
+				</div>
+
+				<!-- coord -->
+				<div class="col-xl-4 col-md-6">
+					<div class="card shadow" style="width: 20rem,height: 40em;">
+								<div class="inner im">
+									<img class="card-img-top" src="images/siret.jpg" alt="">
+								</div>
+								<div class="card-body">
+								<p class="card-text">Identification INSEE : N° de SIRET 484 104237 00017, Code APE 913E</p>
+								</div>
+							</div>
+
+				</div>
+				<div class="col-xl-4 col-md-6">
+					<div class="card shadow" style="width: 20rem,height: 40em;">
+								<div class="inner im">
+									<img class="card-img-top" src="images/mail.png" alt="">
+								</div>
+								<div class="card-body">
+								<p class="card-text"> Vous pouvez également nous contacter par mail : <a href="mailto:contact@epa.com">contact@epa.com</a></p>
+								</div>
+							</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+			<div class="footer_content">
+				<p>&copy; Copyrights <strong>odile hamrioui - WEB Factory 2K20</strong>. All Rights Reserved</p>
+			</div>
+		</div>
+
+	</footer>
+
+</div>
+
+<script src="js/menu.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="plugins/jquery-ui.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
